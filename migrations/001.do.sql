@@ -1,0 +1,12 @@
+CREATE TABLE pets (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE sales (
+    id SERIAL PRIMARY KEY,
+    pet_id INTEGER REFERENCES pets(id),
+    price DECIMAL(10,2) NOT NULL,
+    date DATE NOT NULL
+);
